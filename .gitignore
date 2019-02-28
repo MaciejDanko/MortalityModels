@@ -2,6 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
+MortalityModels.Rproj
+test/
 src/*.o
 src/*.so
 src/*.dll

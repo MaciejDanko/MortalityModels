@@ -3,7 +3,6 @@ Type: Package
 Title: Fitting different mortality models
 Version: 0.1.0
 Authors@R: person("Maciej J.", "Danko", role = c("aut", "cre"), email = "Maciej.Danko@gmail.com", comment = c(ORCID = "0000-0002-7924-9022"))
-Maintainer: person("Maciej J.", "Danko", role = c("aut", "cre"), email = "Maciej.Danko@gmail.com", comment = c(ORCID = "0000-0002-7924-9022"))
 Description: Fitting different mortality models
 LinkingTo: Rcpp, RcppEigen
 License: GPL-3

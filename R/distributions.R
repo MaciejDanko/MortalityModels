@@ -102,5 +102,5 @@ AFT.gam.gomp.mak<-function(a,b,c,sb,x,mean_zb=1,steps=500,lo.zb=10^-10,hi.zb=5){
     MU.M=Fx/SX+c
     SX.M=exp(-x*c)*SX
   }
-  return(list(MuBar=MU.M,SBar=SX.M,DistrMissed=1-Correction))
+  return(list(MuBar=MU.M,SBar=SX.M,z=zb,pdf=gpdf,DistrMissed=1-Correction))
 }

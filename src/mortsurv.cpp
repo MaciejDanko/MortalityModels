@@ -2,7 +2,6 @@
 #include <RcppEigen.h>
 using namespace Rcpp;
 
-using Eigen::Map;
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using Eigen::ArrayXd;
@@ -138,7 +137,6 @@ Eigen::VectorXd phg_gompertz_makeham_mu(const double a,
     return(a*(x*b).array().exp()+c);
   }
 }
-
 
 
 // [[Rcpp::depends(RcppEigen)]]

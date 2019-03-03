@@ -1,3 +1,4 @@
+#' @noRd
 repmat <- function(X,m,n){
   mx = dim(X)[1]
   nx = dim(X)[2]

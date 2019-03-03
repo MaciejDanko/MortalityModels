@@ -1,4 +1,6 @@
 #Likelihood rato test
+#' @noRd
+#' @export
 lrTest<-function(LLRestricted,LLFull,DoF,alpha=0.05,boundaryF=F){
   Ratio   =  2 * (LLFull - LLRestricted)
   pValue  =  1 - stats:::pchisq(Ratio , DoF)
@@ -11,6 +13,8 @@ lrTest<-function(LLRestricted,LLFull,DoF,alpha=0.05,boundaryF=F){
 }
 
 #information criteria and their weights
+#' @noRd
+#' @export
 AIC.BIC<-function(vLL,vnPar, Observ=NULL){
   res=NULL
   if (is.null(Observ)){
@@ -35,6 +39,7 @@ AIC.BIC<-function(vLL,vnPar, Observ=NULL){
 }
 
 #keep your estimates in bounds
+#' @noRd
 CorrectEstm<-function(Estm,lbvec,ubvec){
   if (any(is.na(Estm))) { #NA or NaN
     cat(paste('Wrong MLEs:',Estm,'\n'))
@@ -46,6 +51,8 @@ CorrectEstm<-function(Estm,lbvec,ubvec){
 }
 
 #negative poisson likelihood function
+#' @noRd
+#' @export
 neg.Poisson.LLike <- function(MortFunc,par,x,I,E,lbvec,ubvec) { 
   par=CorrectEstm(par,lbvec,ubvec)
   miun <- MortFunc(par,x)
@@ -59,6 +66,8 @@ neg.Poisson.LLike <- function(MortFunc,par,x,I,E,lbvec,ubvec) {
   return(out)
 }
 
+#' @noRd
+#' @export
 optLL<-function(inipar.list,MortFunc,x,I,E,fn=neg.Poisson.LLike,lbvec,ubvec,doprecmax=25,doEA=T){
   #remove empty elements from the list
   inipar.list[sapply(1:length(inipar.list),function(X) is.null(inipar.list[[X]]))]=NULL

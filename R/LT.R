@@ -1,3 +1,5 @@
+#' @noRd
+#' @export
 CalcLT<-function(Times,Events=rep(1,length(Times)),First.Bin=0,Bin.Step=1,Last.Bin=NULL,Lost.Events.Status=1){
   if (length(Times)!=length(Events)) stop
   K=sort(Times,index.return=T)

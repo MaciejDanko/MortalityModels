@@ -1,9 +1,9 @@
 Package: MortalityModels
 Type: Package
-Title: Fitting different mortality models
+Title: Fitting and simulating different human and non-human mortality models
 Version: 0.1.0
 Authors@R: person("Maciej J.", "Danko", role = c("aut", "cre"), email = "Maciej.Danko@gmail.com", comment = c(ORCID = "0000-0002-7924-9022"))
-Description: Fitting different mortality models
+Description: Fitting and simulating different human and non-human mortality models to the aggregated nd infividual data.
 LinkingTo: Rcpp, RcppEigen
 License: GPL-3
 Encoding: UTF-8
@@ -12,6 +12,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 SystemRequirements: C++11
 Suggests: 
+    ungroup,
     knitr,
     rmarkdown,
     roxygen2,

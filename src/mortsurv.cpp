@@ -8,7 +8,7 @@ using Eigen::ArrayXd;
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-SEXP aftg_gompertz_makeham_mus(const double a, 
+SEXP C_aftg_gompertz_makeham_mus(const double a, 
                                const double b, 
                                const double c,
                                const double s,
@@ -57,7 +57,7 @@ SEXP aftg_gompertz_makeham_mus(const double a,
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd gompertz_mu(const double a, 
+Eigen::VectorXd C_gompertz_mu(const double a, 
                             const double b, 
                             const Eigen::VectorXd x){   
   return(a*(x*b).array().exp());
@@ -66,7 +66,7 @@ Eigen::VectorXd gompertz_mu(const double a,
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd gompertz_s(const double a, 
+Eigen::VectorXd C_gompertz_s(const double a, 
                            const double b, 
                            const Eigen::VectorXd x){   
   return((-a*((x.array()*b).exp() - 1)/b).exp());
@@ -75,7 +75,7 @@ Eigen::VectorXd gompertz_s(const double a,
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd gompertz_makeham_mu(const double a, 
+Eigen::VectorXd C_gompertz_makeham_mu(const double a, 
                                     const double b, 
                                     const double c, 
                                     const Eigen::VectorXd x){   
@@ -85,7 +85,7 @@ Eigen::VectorXd gompertz_makeham_mu(const double a,
  
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd gompertz_makeham_s(const double a, 
+Eigen::VectorXd C_gompertz_makeham_s(const double a, 
                            const double b, 
                            const double c, 
                            const Eigen::VectorXd x){   
@@ -95,7 +95,7 @@ Eigen::VectorXd gompertz_makeham_s(const double a,
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd phg_gompertz_mu(const double a, 
+Eigen::VectorXd C_phg_gompertz_mu(const double a, 
                                 const double b, 
                                 const double s,
                                 const Eigen::VectorXd x){   
@@ -110,7 +110,7 @@ Eigen::VectorXd phg_gompertz_mu(const double a,
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd phg_gompertz_s(const double a, 
+Eigen::VectorXd C_phg_gompertz_s(const double a, 
                                 const double b, 
                                 const double s,
                                 const Eigen::VectorXd x){   
@@ -125,7 +125,7 @@ Eigen::VectorXd phg_gompertz_s(const double a,
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd phg_gompertz_makeham_mu(const double a, 
+Eigen::VectorXd C_phg_gompertz_makeham_mu(const double a, 
                                         const double b, 
                                         const double c,
                                         const double s,
@@ -141,7 +141,7 @@ Eigen::VectorXd phg_gompertz_makeham_mu(const double a,
 
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
-Eigen::VectorXd phg_gompertz_makeham_s(const double a, 
+Eigen::VectorXd C_phg_gompertz_makeham_s(const double a, 
                                const double b, 
                                const double c,
                                const double s,

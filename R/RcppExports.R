@@ -5,8 +5,16 @@ C_aftg_gompertz_makeham_mus <- function(a, b, c, s, x, mzb, lzb, hzb, steps) {
     .Call('_MortalityModels_C_aftg_gompertz_makeham_mus', PACKAGE = 'MortalityModels', a, b, c, s, x, mzb, lzb, hzb, steps)
 }
 
+C_aftg_gompertz_mus <- function(a, b, s, x, mzb, lzb, hzb, steps) {
+    .Call('_MortalityModels_C_aftg_gompertz_mus', PACKAGE = 'MortalityModels', a, b, s, x, mzb, lzb, hzb, steps)
+}
+
 C_gompertz_mu <- function(a, b, x) {
     .Call('_MortalityModels_C_gompertz_mu', PACKAGE = 'MortalityModels', a, b, x)
+}
+
+C_d_gompertz_mu <- function(a, b, x) {
+    .Call('_MortalityModels_C_d_gompertz_mu', PACKAGE = 'MortalityModels', a, b, x)
 }
 
 C_gompertz_s <- function(a, b, x) {
@@ -17,12 +25,20 @@ C_gompertz_makeham_mu <- function(a, b, c, x) {
     .Call('_MortalityModels_C_gompertz_makeham_mu', PACKAGE = 'MortalityModels', a, b, c, x)
 }
 
+C_d_gompertz_makeham_mu <- function(a, b, c, x) {
+    .Call('_MortalityModels_C_d_gompertz_makeham_mu', PACKAGE = 'MortalityModels', a, b, c, x)
+}
+
 C_gompertz_makeham_s <- function(a, b, c, x) {
     .Call('_MortalityModels_C_gompertz_makeham_s', PACKAGE = 'MortalityModels', a, b, c, x)
 }
 
 C_phg_gompertz_mu <- function(a, b, s, x) {
     .Call('_MortalityModels_C_phg_gompertz_mu', PACKAGE = 'MortalityModels', a, b, s, x)
+}
+
+C_d_phg_gompertz_mu <- function(a, b, s, x) {
+    .Call('_MortalityModels_C_d_phg_gompertz_mu', PACKAGE = 'MortalityModels', a, b, s, x)
 }
 
 C_phg_gompertz_s <- function(a, b, s, x) {
@@ -33,7 +49,35 @@ C_phg_gompertz_makeham_mu <- function(a, b, c, s, x) {
     .Call('_MortalityModels_C_phg_gompertz_makeham_mu', PACKAGE = 'MortalityModels', a, b, c, s, x)
 }
 
+C_d_phg_gompertz_makeham_mu <- function(a, b, c, s, x) {
+    .Call('_MortalityModels_C_d_phg_gompertz_makeham_mu', PACKAGE = 'MortalityModels', a, b, c, s, x)
+}
+
 C_phg_gompertz_makeham_s <- function(a, b, c, s, x) {
     .Call('_MortalityModels_C_phg_gompertz_makeham_s', PACKAGE = 'MortalityModels', a, b, c, s, x)
+}
+
+C_LL_poisson_aftg_gompertz_makeham <- function(par, x, I, E, lo_par, hi_par, mzb, lzb, hzb, steps, neg) {
+    .Call('_MortalityModels_C_LL_poisson_aftg_gompertz_makeham', PACKAGE = 'MortalityModels', par, x, I, E, lo_par, hi_par, mzb, lzb, hzb, steps, neg)
+}
+
+C_LL_poisson_aftg_gompertz <- function(par, x, I, E, lo_par, hi_par, mzb, lzb, hzb, steps, neg) {
+    .Call('_MortalityModels_C_LL_poisson_aftg_gompertz', PACKAGE = 'MortalityModels', par, x, I, E, lo_par, hi_par, mzb, lzb, hzb, steps, neg)
+}
+
+C_LL_poisson_phg_gompertz_makeham <- function(par, x, I, E, lo_par, hi_par, neg) {
+    .Call('_MortalityModels_C_LL_poisson_phg_gompertz_makeham', PACKAGE = 'MortalityModels', par, x, I, E, lo_par, hi_par, neg)
+}
+
+C_LL_poisson_phg_gompertz <- function(par, x, I, E, lo_par, hi_par, neg) {
+    .Call('_MortalityModels_C_LL_poisson_phg_gompertz', PACKAGE = 'MortalityModels', par, x, I, E, lo_par, hi_par, neg)
+}
+
+C_LL_poisson_gompertz <- function(par, x, I, E, lo_par, hi_par, neg) {
+    .Call('_MortalityModels_C_LL_poisson_gompertz', PACKAGE = 'MortalityModels', par, x, I, E, lo_par, hi_par, neg)
+}
+
+C_LL_poisson_gompertz_makeham <- function(par, x, I, E, lo_par, hi_par, neg) {
+    .Call('_MortalityModels_C_LL_poisson_gompertz_makeham', PACKAGE = 'MortalityModels', par, x, I, E, lo_par, hi_par, neg)
 }
 

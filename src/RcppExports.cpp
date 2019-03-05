@@ -25,6 +25,24 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// C_aftg_gompertz_mus
+SEXP C_aftg_gompertz_mus(const double a, const double b, const double s, const Eigen::VectorXd x, const double mzb, const double lzb, const double hzb, const unsigned int steps);
+RcppExport SEXP _MortalityModels_C_aftg_gompertz_mus(SEXP aSEXP, SEXP bSEXP, SEXP sSEXP, SEXP xSEXP, SEXP mzbSEXP, SEXP lzbSEXP, SEXP hzbSEXP, SEXP stepsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double >::type a(aSEXP);
+    Rcpp::traits::input_parameter< const double >::type b(bSEXP);
+    Rcpp::traits::input_parameter< const double >::type s(sSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const double >::type mzb(mzbSEXP);
+    Rcpp::traits::input_parameter< const double >::type lzb(lzbSEXP);
+    Rcpp::traits::input_parameter< const double >::type hzb(hzbSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type steps(stepsSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_aftg_gompertz_mus(a, b, s, x, mzb, lzb, hzb, steps));
+    return rcpp_result_gen;
+END_RCPP
+}
 // C_gompertz_mu
 Eigen::VectorXd C_gompertz_mu(const double a, const double b, const Eigen::VectorXd x);
 RcppExport SEXP _MortalityModels_C_gompertz_mu(SEXP aSEXP, SEXP bSEXP, SEXP xSEXP) {
@@ -35,6 +53,19 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const double >::type b(bSEXP);
     Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(C_gompertz_mu(a, b, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_d_gompertz_mu
+Eigen::MatrixXd C_d_gompertz_mu(const double a, const double b, const Eigen::VectorXd x);
+RcppExport SEXP _MortalityModels_C_d_gompertz_mu(SEXP aSEXP, SEXP bSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double >::type a(aSEXP);
+    Rcpp::traits::input_parameter< const double >::type b(bSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_d_gompertz_mu(a, b, x));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -65,6 +96,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// C_d_gompertz_makeham_mu
+Eigen::MatrixXd C_d_gompertz_makeham_mu(const double a, const double b, const double c, const Eigen::VectorXd x);
+RcppExport SEXP _MortalityModels_C_d_gompertz_makeham_mu(SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double >::type a(aSEXP);
+    Rcpp::traits::input_parameter< const double >::type b(bSEXP);
+    Rcpp::traits::input_parameter< const double >::type c(cSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_d_gompertz_makeham_mu(a, b, c, x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // C_gompertz_makeham_s
 Eigen::VectorXd C_gompertz_makeham_s(const double a, const double b, const double c, const Eigen::VectorXd x);
 RcppExport SEXP _MortalityModels_C_gompertz_makeham_s(SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP xSEXP) {
@@ -90,6 +135,20 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const double >::type s(sSEXP);
     Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(C_phg_gompertz_mu(a, b, s, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_d_phg_gompertz_mu
+Eigen::MatrixXd C_d_phg_gompertz_mu(const double a, const double b, const double s, const Eigen::VectorXd x);
+RcppExport SEXP _MortalityModels_C_d_phg_gompertz_mu(SEXP aSEXP, SEXP bSEXP, SEXP sSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double >::type a(aSEXP);
+    Rcpp::traits::input_parameter< const double >::type b(bSEXP);
+    Rcpp::traits::input_parameter< const double >::type s(sSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_d_phg_gompertz_mu(a, b, s, x));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -122,6 +181,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// C_d_phg_gompertz_makeham_mu
+Eigen::MatrixXd C_d_phg_gompertz_makeham_mu(const double a, const double b, const double c, const double s, const Eigen::VectorXd x);
+RcppExport SEXP _MortalityModels_C_d_phg_gompertz_makeham_mu(SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP sSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double >::type a(aSEXP);
+    Rcpp::traits::input_parameter< const double >::type b(bSEXP);
+    Rcpp::traits::input_parameter< const double >::type c(cSEXP);
+    Rcpp::traits::input_parameter< const double >::type s(sSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_d_phg_gompertz_makeham_mu(a, b, c, s, x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // C_phg_gompertz_makeham_s
 Eigen::VectorXd C_phg_gompertz_makeham_s(const double a, const double b, const double c, const double s, const Eigen::VectorXd x);
 RcppExport SEXP _MortalityModels_C_phg_gompertz_makeham_s(SEXP aSEXP, SEXP bSEXP, SEXP cSEXP, SEXP sSEXP, SEXP xSEXP) {
@@ -137,17 +211,138 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// C_LL_poisson_aftg_gompertz_makeham
+double C_LL_poisson_aftg_gompertz_makeham(const Eigen::VectorXd par, const Eigen::VectorXd x, const Eigen::VectorXd I, const Eigen::VectorXd E, const Eigen::VectorXd lo_par, const Eigen::VectorXd hi_par, const double mzb, const double lzb, const double hzb, const unsigned int steps, const unsigned int neg);
+RcppExport SEXP _MortalityModels_C_LL_poisson_aftg_gompertz_makeham(SEXP parSEXP, SEXP xSEXP, SEXP ISEXP, SEXP ESEXP, SEXP lo_parSEXP, SEXP hi_parSEXP, SEXP mzbSEXP, SEXP lzbSEXP, SEXP hzbSEXP, SEXP stepsSEXP, SEXP negSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type par(parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type I(ISEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type E(ESEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type lo_par(lo_parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type hi_par(hi_parSEXP);
+    Rcpp::traits::input_parameter< const double >::type mzb(mzbSEXP);
+    Rcpp::traits::input_parameter< const double >::type lzb(lzbSEXP);
+    Rcpp::traits::input_parameter< const double >::type hzb(hzbSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type steps(stepsSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type neg(negSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_LL_poisson_aftg_gompertz_makeham(par, x, I, E, lo_par, hi_par, mzb, lzb, hzb, steps, neg));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_LL_poisson_aftg_gompertz
+double C_LL_poisson_aftg_gompertz(const Eigen::VectorXd par, const Eigen::VectorXd x, const Eigen::VectorXd I, const Eigen::VectorXd E, const Eigen::VectorXd lo_par, const Eigen::VectorXd hi_par, const double mzb, const double lzb, const double hzb, const unsigned int steps, const unsigned int neg);
+RcppExport SEXP _MortalityModels_C_LL_poisson_aftg_gompertz(SEXP parSEXP, SEXP xSEXP, SEXP ISEXP, SEXP ESEXP, SEXP lo_parSEXP, SEXP hi_parSEXP, SEXP mzbSEXP, SEXP lzbSEXP, SEXP hzbSEXP, SEXP stepsSEXP, SEXP negSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type par(parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type I(ISEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type E(ESEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type lo_par(lo_parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type hi_par(hi_parSEXP);
+    Rcpp::traits::input_parameter< const double >::type mzb(mzbSEXP);
+    Rcpp::traits::input_parameter< const double >::type lzb(lzbSEXP);
+    Rcpp::traits::input_parameter< const double >::type hzb(hzbSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type steps(stepsSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type neg(negSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_LL_poisson_aftg_gompertz(par, x, I, E, lo_par, hi_par, mzb, lzb, hzb, steps, neg));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_LL_poisson_phg_gompertz_makeham
+double C_LL_poisson_phg_gompertz_makeham(const Eigen::VectorXd par, const Eigen::VectorXd x, const Eigen::VectorXd I, const Eigen::VectorXd E, const Eigen::VectorXd lo_par, const Eigen::VectorXd hi_par, const unsigned int neg);
+RcppExport SEXP _MortalityModels_C_LL_poisson_phg_gompertz_makeham(SEXP parSEXP, SEXP xSEXP, SEXP ISEXP, SEXP ESEXP, SEXP lo_parSEXP, SEXP hi_parSEXP, SEXP negSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type par(parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type I(ISEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type E(ESEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type lo_par(lo_parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type hi_par(hi_parSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type neg(negSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_LL_poisson_phg_gompertz_makeham(par, x, I, E, lo_par, hi_par, neg));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_LL_poisson_phg_gompertz
+double C_LL_poisson_phg_gompertz(const Eigen::VectorXd par, const Eigen::VectorXd x, const Eigen::VectorXd I, const Eigen::VectorXd E, const Eigen::VectorXd lo_par, const Eigen::VectorXd hi_par, const unsigned int neg);
+RcppExport SEXP _MortalityModels_C_LL_poisson_phg_gompertz(SEXP parSEXP, SEXP xSEXP, SEXP ISEXP, SEXP ESEXP, SEXP lo_parSEXP, SEXP hi_parSEXP, SEXP negSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type par(parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type I(ISEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type E(ESEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type lo_par(lo_parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type hi_par(hi_parSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type neg(negSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_LL_poisson_phg_gompertz(par, x, I, E, lo_par, hi_par, neg));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_LL_poisson_gompertz
+double C_LL_poisson_gompertz(const Eigen::VectorXd par, const Eigen::VectorXd x, const Eigen::VectorXd I, const Eigen::VectorXd E, const Eigen::VectorXd lo_par, const Eigen::VectorXd hi_par, const unsigned int neg);
+RcppExport SEXP _MortalityModels_C_LL_poisson_gompertz(SEXP parSEXP, SEXP xSEXP, SEXP ISEXP, SEXP ESEXP, SEXP lo_parSEXP, SEXP hi_parSEXP, SEXP negSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type par(parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type I(ISEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type E(ESEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type lo_par(lo_parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type hi_par(hi_parSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type neg(negSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_LL_poisson_gompertz(par, x, I, E, lo_par, hi_par, neg));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_LL_poisson_gompertz_makeham
+double C_LL_poisson_gompertz_makeham(const Eigen::VectorXd par, const Eigen::VectorXd x, const Eigen::VectorXd I, const Eigen::VectorXd E, const Eigen::VectorXd lo_par, const Eigen::VectorXd hi_par, const unsigned int neg);
+RcppExport SEXP _MortalityModels_C_LL_poisson_gompertz_makeham(SEXP parSEXP, SEXP xSEXP, SEXP ISEXP, SEXP ESEXP, SEXP lo_parSEXP, SEXP hi_parSEXP, SEXP negSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type par(parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type I(ISEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type E(ESEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type lo_par(lo_parSEXP);
+    Rcpp::traits::input_parameter< const Eigen::VectorXd >::type hi_par(hi_parSEXP);
+    Rcpp::traits::input_parameter< const unsigned int >::type neg(negSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_LL_poisson_gompertz_makeham(par, x, I, E, lo_par, hi_par, neg));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_MortalityModels_C_aftg_gompertz_makeham_mus", (DL_FUNC) &_MortalityModels_C_aftg_gompertz_makeham_mus, 9},
+    {"_MortalityModels_C_aftg_gompertz_mus", (DL_FUNC) &_MortalityModels_C_aftg_gompertz_mus, 8},
     {"_MortalityModels_C_gompertz_mu", (DL_FUNC) &_MortalityModels_C_gompertz_mu, 3},
+    {"_MortalityModels_C_d_gompertz_mu", (DL_FUNC) &_MortalityModels_C_d_gompertz_mu, 3},
     {"_MortalityModels_C_gompertz_s", (DL_FUNC) &_MortalityModels_C_gompertz_s, 3},
     {"_MortalityModels_C_gompertz_makeham_mu", (DL_FUNC) &_MortalityModels_C_gompertz_makeham_mu, 4},
+    {"_MortalityModels_C_d_gompertz_makeham_mu", (DL_FUNC) &_MortalityModels_C_d_gompertz_makeham_mu, 4},
     {"_MortalityModels_C_gompertz_makeham_s", (DL_FUNC) &_MortalityModels_C_gompertz_makeham_s, 4},
     {"_MortalityModels_C_phg_gompertz_mu", (DL_FUNC) &_MortalityModels_C_phg_gompertz_mu, 4},
+    {"_MortalityModels_C_d_phg_gompertz_mu", (DL_FUNC) &_MortalityModels_C_d_phg_gompertz_mu, 4},
     {"_MortalityModels_C_phg_gompertz_s", (DL_FUNC) &_MortalityModels_C_phg_gompertz_s, 4},
     {"_MortalityModels_C_phg_gompertz_makeham_mu", (DL_FUNC) &_MortalityModels_C_phg_gompertz_makeham_mu, 5},
+    {"_MortalityModels_C_d_phg_gompertz_makeham_mu", (DL_FUNC) &_MortalityModels_C_d_phg_gompertz_makeham_mu, 5},
     {"_MortalityModels_C_phg_gompertz_makeham_s", (DL_FUNC) &_MortalityModels_C_phg_gompertz_makeham_s, 5},
+    {"_MortalityModels_C_LL_poisson_aftg_gompertz_makeham", (DL_FUNC) &_MortalityModels_C_LL_poisson_aftg_gompertz_makeham, 11},
+    {"_MortalityModels_C_LL_poisson_aftg_gompertz", (DL_FUNC) &_MortalityModels_C_LL_poisson_aftg_gompertz, 11},
+    {"_MortalityModels_C_LL_poisson_phg_gompertz_makeham", (DL_FUNC) &_MortalityModels_C_LL_poisson_phg_gompertz_makeham, 7},
+    {"_MortalityModels_C_LL_poisson_phg_gompertz", (DL_FUNC) &_MortalityModels_C_LL_poisson_phg_gompertz, 7},
+    {"_MortalityModels_C_LL_poisson_gompertz", (DL_FUNC) &_MortalityModels_C_LL_poisson_gompertz, 7},
+    {"_MortalityModels_C_LL_poisson_gompertz_makeham", (DL_FUNC) &_MortalityModels_C_LL_poisson_gompertz_makeham, 7},
     {NULL, NULL, 0}
 };
 

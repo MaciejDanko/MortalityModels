@@ -119,7 +119,7 @@ Eigen::MatrixXd C_d_gompertz_mu(const double a,
                               const Eigen::VectorXd x){   
   MatrixXd res(2,x.size());
   ArrayXd dmu_da = (x*b).array().exp();
-  ArrayXd dmu_db = a*dmu_da.cwiseProduct(x.array());  
+  ArrayXd dmu_db = a*dmu_da*x.array();  
   res.row(0) = dmu_da;
   res.row(1) = dmu_db;
   return(res);
@@ -152,7 +152,7 @@ Eigen::MatrixXd C_d_gompertz_makeham_mu(const double a,
                                 const Eigen::VectorXd x){   
   MatrixXd res(3,x.size());
   ArrayXd dmu_da = (x*b).array().exp();
-  ArrayXd dmu_db = a*dmu_da.cwiseProduct(x.array());  
+  ArrayXd dmu_db = a*dmu_da*x.array();  
   res.row(0) = dmu_da;
   res.row(1) = dmu_db;
   res.row(2) = VectorXd::Ones(x.size());
@@ -292,7 +292,7 @@ double C_LL_poisson_aftg_gompertz_makeham(const Eigen::VectorXd par,
   List tmp =
     C_aftg_gompertz_makeham_mus(PAR(0),PAR(1),PAR(2),PAR(3),x,mzb,lzb,hzb,steps);
   ArrayXd mu = as<ArrayXd>(tmp["mu"]);
-  double out = (I.array().cwiseProduct(mu.log())-E.array().cwiseProduct(mu)).sum();
+  double out = (I.array()*mu.log()-E.array()*mu).sum();
   if (traits::is_nan<REALSXP>(out) || 
       NumericVector::is_na(out) || 
       traits::is_infinite<REALSXP>(out)) out = -1e200;
@@ -322,7 +322,7 @@ double C_LL_poisson_aftg_gompertz(const Eigen::VectorXd par,
   List tmp =
     C_aftg_gompertz_mus(PAR(0),PAR(1),PAR(2),x,mzb,lzb,hzb,steps);
   ArrayXd mu = as<ArrayXd>(tmp["mu"]);
-  double out = (I.array().cwiseProduct(mu.log())-E.array().cwiseProduct(mu)).sum();
+  double out = (I.array()*mu.log()-E.array()*mu).sum();
   if (traits::is_nan<REALSXP>(out) || 
       NumericVector::is_na(out) || 
       traits::is_infinite<REALSXP>(out)) out = -1e200;
@@ -348,7 +348,7 @@ double C_LL_poisson_phg_gompertz_makeham(const Eigen::VectorXd par,
   }
   ArrayXd mu = 
     C_phg_gompertz_makeham_mu(PAR(0),PAR(1),PAR(2),PAR(3),x);
-  double out = (I.array().cwiseProduct(mu.log())-E.array().cwiseProduct(mu)).sum(); 
+  double out = (I.array()*mu.log()-E.array()*mu).sum();
   if (traits::is_nan<REALSXP>(out) || 
       NumericVector::is_na(out) || 
       traits::is_infinite<REALSXP>(out)) out = -1e200;
@@ -373,7 +373,7 @@ double C_LL_poisson_phg_gompertz(const Eigen::VectorXd par,
   }
   ArrayXd mu = 
     C_phg_gompertz_mu(PAR(0),PAR(1),PAR(2),x);
-  double out = (I.array().cwiseProduct(mu.log())-E.array().cwiseProduct(mu)).sum(); 
+  double out = (I.array()*mu.log()-E.array()*mu).sum();
   if (traits::is_nan<REALSXP>(out) || 
       NumericVector::is_na(out) || 
       traits::is_infinite<REALSXP>(out)) out = -1e200;
@@ -398,7 +398,7 @@ double C_LL_poisson_gompertz(const Eigen::VectorXd par,
   }
   ArrayXd mu = 
     C_gompertz_mu(PAR(0),PAR(1),x);
-  double out = (I.array().cwiseProduct(mu.log())-E.array().cwiseProduct(mu)).sum(); 
+  double out = (I.array()*mu.log()-E.array()*mu).sum();
   if (traits::is_nan<REALSXP>(out) || 
       NumericVector::is_na(out) || 
       traits::is_infinite<REALSXP>(out)) out = -1e200;
@@ -423,7 +423,7 @@ double C_LL_poisson_gompertz_makeham(const Eigen::VectorXd par,
   }
   ArrayXd mu = 
     C_gompertz_makeham_mu(PAR(0),PAR(1),PAR(2),x);
-  double out = (I.array().cwiseProduct(mu.log())-E.array().cwiseProduct(mu)).sum(); 
+  double out = (I.array()*mu.log()-E.array()*mu).sum(); 
   if (traits::is_nan<REALSXP>(out) || 
       NumericVector::is_na(out) || 
       traits::is_infinite<REALSXP>(out)) out = -1e200;

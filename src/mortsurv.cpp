@@ -49,9 +49,9 @@ SEXP C_aftg_gompertz_makeham_mus(const double a,
   }
   return List::create(
     Named("mu") = MU,
-    Named("s") = SX,
-    Named("pdf") = gpdf.matrix(),
-    Named("z") = zb.matrix()
+    Named("s") = SX
+  //  Named("pdf") = gpdf.matrix(),
+  //  Named("z") = zb.matrix()
   );
 }
 
@@ -97,9 +97,9 @@ SEXP C_aftg_gompertz_mus(const double a,
   }
   return List::create(
     Named("mu") = MU,
-    Named("s") = SX,
-    Named("pdf") = gpdf.matrix(),
-    Named("z") = zb.matrix()
+    Named("s") = SX
+    //Named("pdf") = gpdf.matrix(),
+    //Named("z") = zb.matrix()
   );
 }
 

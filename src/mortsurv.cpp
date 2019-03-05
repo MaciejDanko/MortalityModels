@@ -50,8 +50,8 @@ SEXP C_aftg_gompertz_makeham_mus(const double a,
   return List::create(
     Named("mu") = MU,
     Named("s") = SX
-  //  Named("pdf") = gpdf.matrix(),
-  //  Named("z") = zb.matrix()
+    //  Named("pdf") = gpdf.matrix(),
+    //  Named("z") = zb.matrix()
   );
 }
 
@@ -115,8 +115,8 @@ Eigen::VectorXd C_gompertz_mu(const double a,
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
 Eigen::MatrixXd C_d_gompertz_mu(const double a, 
-                              const double b, 
-                              const Eigen::VectorXd x){   
+                                const double b, 
+                                const Eigen::VectorXd x){   
   MatrixXd res(2,x.size());
   ArrayXd dmu_da = (x*b).array().exp();
   ArrayXd dmu_db = a*dmu_da*x.array();  
@@ -147,9 +147,9 @@ Eigen::VectorXd C_gompertz_makeham_mu(const double a,
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
 Eigen::MatrixXd C_d_gompertz_makeham_mu(const double a, 
-                                const double b, 
-                                const double c, 
-                                const Eigen::VectorXd x){   
+                                        const double b, 
+                                        const double c, 
+                                        const Eigen::VectorXd x){   
   MatrixXd res(3,x.size());
   ArrayXd dmu_da = (x*b).array().exp();
   ArrayXd dmu_db = a*dmu_da*x.array();  
@@ -186,9 +186,9 @@ Eigen::VectorXd C_phg_gompertz_mu(const double a,
 // [[Rcpp::depends(RcppEigen)]]
 // [[Rcpp::export]]
 Eigen::MatrixXd C_d_phg_gompertz_mu(const double a, 
-                                        const double b, 
-                                        const double s, 
-                                        const Eigen::VectorXd x){   
+                                    const double b, 
+                                    const double s, 
+                                    const Eigen::VectorXd x){   
   MatrixXd res(3,x.size()); 
   ArrayXd tmp1 = (x*b).array().exp(); //2
   ArrayXd tmp2 = tmp1-1; //4

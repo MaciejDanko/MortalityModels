@@ -44,8 +44,7 @@ find_maxLL<-function(inipar.list,x,I,E,fn,par.lo,par.hi,doprecmax=2,doEA=T){
   #remove empty elements from the list
   inipar.list[sapply(1:length(inipar.list),function(X) is.null(inipar.list[[X]]))]=NULL
   if (sum((sapply(1:length(inipar.list),function(X) length(inipar.list[[X]])))-length(inipar.list[[1]]))>0){
-    cat('Unequal length of initial parameters\n')
-    stop
+    stop('Unequal length of initial parameters\n')
   }
   if (doEA){
     tmp <- DEoptim(fn=fn,lower=par.lo,upper=par.hi, x=x, I=I, E=E, lo.par=par.lo, hi.par=par.hi,neg=TRUE,
@@ -60,7 +59,7 @@ find_maxLL<-function(inipar.list,x,I,E,fn,par.lo,par.hi,doprecmax=2,doEA=T){
   MaxLL <- -1e200
   for (k in 1:length(inipar.list)){
     mypar <- inipar.list[[k]]
-    cat(k)
+    #cat(k)
     LastLL <- -1e200
     for (moreprec in 1:doprecmax){
       opt <- optim(par=mypar, x=x, I=I, E=E, fn=fn, lo.par=par.lo, hi.par=par.hi, hessian=F)
@@ -78,7 +77,7 @@ find_maxLL<-function(inipar.list,x,I,E,fn,par.lo,par.hi,doprecmax=2,doEA=T){
       MaxLL=LL
     }
   }
-  cat('\n')
+  #cat('\n')
   return(list(value=MaxLL,par=Max.opt,EAvalue=EAvalue,EApar=EApar))
 }
 
